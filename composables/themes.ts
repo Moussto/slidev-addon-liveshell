@@ -1,0 +1,55 @@
+import type { ITerminalOptions, ITheme } from '@xterm/xterm'
+
+export const DARK_THEME: ITheme = {
+  background: '#1e1e1e',
+  black: '#000000',
+  blue: '#569cd6',
+  brightBlack: '#666666',
+  brightBlue: '#9cdcfe',
+  brightCyan: '#9cdcfe',
+  brightGreen: '#b5cea8',
+  brightMagenta: '#d8a0df',
+  brightRed: '#f44747',
+  brightWhite: '#ffffff',
+  brightYellow: '#dcdcaa',
+  cursor: '#aeafad',
+  cyan: '#4ec9b0',
+  foreground: '#d4d4d4',
+  green: '#6a9955',
+  magenta: '#c586c0',
+  red: '#f44747',
+  selectionBackground: 'rgba(255, 255, 255, 0.3)',
+  white: '#d4d4d4',
+  yellow: '#dcdcaa',
+}
+
+export const LIGHT_THEME: ITheme = {
+  background: '#ffffff',
+  black: '#000000',
+  blue: '#0451a5',
+  brightBlack: '#666666',
+  brightBlue: '#0451a5',
+  brightCyan: '#0598bc',
+  brightGreen: '#14ce14',
+  brightMagenta: '#bc05bc',
+  brightRed: '#cd3131',
+  brightWhite: '#a5a5a5',
+  brightYellow: '#b5ba00',
+  cursor: '#000000',
+  cyan: '#0598bc',
+  foreground: '#383a42',
+  green: '#008000',
+  magenta: '#bc05bc',
+  red: '#cd3131',
+  selectionBackground: 'rgba(0, 0, 0, 0.15)',
+  white: '#e5e5e5',
+  yellow: '#795e26',
+}
+
+export const DEFAULT_TERMINAL_OPTIONS: ITerminalOptions = {
+  cursorBlink: true,
+  cursorStyle: 'bar',
+  fontFamily: "'Fira Code', 'Cascadia Code', 'Menlo', monospace",
+  fontSize: 14,
+  scrollback: 5000,
+}

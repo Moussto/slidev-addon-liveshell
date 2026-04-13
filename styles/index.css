@@ -1,0 +1,100 @@
+:root {
+  --slidev-terminal-bg: #1e1e1e;
+  --slidev-terminal-border: none;
+  --slidev-terminal-border-radius: 8px;
+  --slidev-terminal-cursor: #aeafad;
+  --slidev-terminal-fg: #d4d4d4;
+  --slidev-terminal-font-family: 'Fira Code', 'Cascadia Code', 'Menlo', monospace;
+  --slidev-terminal-font-size: 14px;
+  --slidev-terminal-selection: rgba(255, 255, 255, 0.3);
+}
+
+:root:not(.dark) {
+  --slidev-terminal-bg: #ffffff;
+  --slidev-terminal-cursor: #000000;
+  --slidev-terminal-fg: #383a42;
+  --slidev-terminal-selection: rgba(0, 0, 0, 0.15);
+}
+
+.slidev-terminal {
+  background: var(--slidev-terminal-bg);
+  border: var(--slidev-terminal-border);
+  border-radius: var(--slidev-terminal-border-radius);
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.slidev-terminal .xterm {
+  height: 100%;
+  padding: 8px;
+}
+
+.slidev-terminal-overlay {
+  align-items: center;
+  background: var(--slidev-terminal-bg);
+  bottom: 0;
+  color: var(--slidev-terminal-fg);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--slidev-terminal-font-family);
+  font-size: var(--slidev-terminal-font-size);
+  gap: 12px;
+  justify-content: center;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.slidev-terminal-overlay-title {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.slidev-terminal-overlay-detail {
+  background: rgba(128, 128, 128, 0.2);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9em;
+  padding: 4px 8px;
+}
+
+.slidev-terminal-overlay-retry {
+  background: rgba(128, 128, 128, 0.3);
+  border: none;
+  border-radius: 4px;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9em;
+  padding: 6px 16px;
+}
+
+.slidev-terminal-overlay-retry:hover {
+  background: rgba(128, 128, 128, 0.5);
+}
+
+@keyframes slidev-terminal-spin {
+  to { transform: rotate(360deg); }
+}
+
+.slidev-terminal-spinner {
+  animation: slidev-terminal-spin 0.8s linear infinite;
+  border: 2px solid rgba(128, 128, 128, 0.3);
+  border-radius: 50%;
+  border-top-color: var(--slidev-terminal-fg);
+  height: 24px;
+  width: 24px;
+}
+
+.slidev-terminal-hidden {
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  visibility: hidden;
+  width: 0;
+}

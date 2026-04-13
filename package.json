@@ -1,0 +1,59 @@
+{
+  "name": "slidev-addon-liveshell",
+  "version": "0.3.0",
+  "description": "Live terminal sessions in your Slidev presentations, powered by ttyd and xterm.js",
+  "author": "Moussto",
+  "type": "module",
+  "homepage": "https://github.com/Moussto/slidev-addon-liveshell#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moussto/slidev-addon-liveshell.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Moussto/slidev-addon-liveshell/issues"
+  },
+  "keywords": [
+    "slidev",
+    "slidev-addon"
+  ],
+  "license": "MIT",
+  "engines": {
+    "slidev": ">=0.50.0"
+  },
+  "exports": {
+    "./composables/*": "./composables/*",
+    "./types": "./types.ts"
+  },
+  "files": [
+    "components",
+    "composables",
+    "!composables/__tests__",
+    "setup",
+    "styles",
+    "types.ts",
+    "vite.config.ts"
+  ],
+  "scripts": {
+    "dev": "slidev showcase/slides.md",
+    "release": "bumpp",
+    "test": "vitest run"
+  },
+  "peerDependencies": {
+    "@slidev/client": ">=0.50.0",
+    "@slidev/types": ">=0.50.0",
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@xterm/addon-fit": "0.10.0",
+    "@xterm/addon-web-links": "0.11.0",
+    "@xterm/xterm": "5.5.0"
+  },
+  "devDependencies": {
+    "@slidev/client": "0.50.0",
+    "@slidev/types": "0.50.0",
+    "typescript": "5.7.3",
+    "bumpp": "9.11.1",
+    "vitest": "3.0.4",
+    "vue": "3.5.13"
+  }
+}
