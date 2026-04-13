@@ -1,0 +1,13 @@
+{
+  "name": "slidev-addon-liveshell-showcase",
+  "private": true,
+  "scripts": {
+    "dev": "slidev slides.md",
+    "build": "slidev build slides.md --base /showcase/"
+  },
+  "dependencies": {
+    "@slidev/cli": "52.14.2",
+    "@slidev/theme-default": "latest",
+    "slidev-addon-liveshell": "file:.."
+  }
+}

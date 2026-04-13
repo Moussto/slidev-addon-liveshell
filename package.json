@@ -1,0 +1,47 @@
+{
+  "name": "slidev-addon-liveshell",
+  "version": "0.3.0",
+  "type": "module",
+  "keywords": [
+    "slidev",
+    "slidev-addon"
+  ],
+  "license": "MIT",
+  "engines": {
+    "slidev": ">=0.50.0"
+  },
+  "slidev": {
+    "defaults": {
+      "terminal": {
+        "defaultPort": 8085,
+        "defaultShell": "zsh",
+        "ttydPath": "ttyd"
+      }
+    }
+  },
+  "files": [
+    "components",
+    "composables",
+    "setup",
+    "styles",
+    "types.ts",
+    "vite.config.ts"
+  ],
+  "peerDependencies": {
+    "@slidev/client": ">=0.50.0",
+    "@slidev/types": ">=0.50.0",
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@xterm/addon-fit": "0.10.0",
+    "@xterm/addon-web-links": "0.11.0",
+    "@xterm/xterm": "5.5.0"
+  },
+  "devDependencies": {
+    "@slidev/client": "0.50.0",
+    "@slidev/types": "0.50.0",
+    "typescript": "5.7.3",
+    "vitest": "3.0.4",
+    "vue": "3.5.13"
+  }
+}
