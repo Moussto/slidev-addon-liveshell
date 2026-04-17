@@ -28,7 +28,14 @@ jobs:
         with:
           node-version: 24
       - run: npm install
-      - run: npm publish --access public
+      - name: Publish to npm
+        run: |
+          VERSION=$(node -p "require('./package.json').version")
+          if echo "$VERSION" | grep -q "-"; then
+            npm publish --access public --tag beta
+          else
+            npm publish --access public
+          fi
       - name: Create GitHub Release
         run: gh release create ${{ github.ref_name }} --generate-notes
         env:
