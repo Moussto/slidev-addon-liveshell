@@ -28,14 +28,16 @@ jobs:
         with:
           node-version: 24
       - run: npm install
-      - name: Publish to npm
+      - name: Detect npm tag
+        id: tag
         run: |
-          VERSION=$(node -p "require('./package.json').version")
-          if echo "$VERSION" | grep -q "-"; then
-            npm publish --access public --tag beta
+          REF="${{ github.ref_name }}"
+          if [[ "$REF" == *"-"* ]]; then
+            echo "dist_tag=${REF#*-}" | sed 's/\..*//' >> "$GITHUB_OUTPUT"
           else
-            npm publish --access public
+            echo "dist_tag=latest" >> "$GITHUB_OUTPUT"
           fi
+      - run: npm publish --access public --tag ${{ steps.tag.outputs.dist_tag }}
       - name: Create GitHub Release
         run: gh release create ${{ github.ref_name }} --generate-notes
         env:
