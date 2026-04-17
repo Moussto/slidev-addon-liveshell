@@ -34,7 +34,7 @@ const { isDark } = useDarkMode()
 const { currentPage } = useNav()
 const containerRef = ref<HTMLElement | null>(null)
 
-const sessionId = props.session ?? `liveshell-${currentPage}-${props.port ?? 'default'}`
+const sessionId = props.session ?? `liveshell-${currentPage.value}-${props.port ?? 'default'}`
 
 const config = computed(() =>
   resolveTerminalOptions(props, deckConfig.value, isDark.value),

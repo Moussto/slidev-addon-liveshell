@@ -24,11 +24,14 @@ npm install slidev-addon-liveshell
 ---
 addons:
   - liveshell
+class: flex flex-col
 ---
 
 # Demo
 
-<Terminal />
+<div class="flex-1 min-h-0">
+  <Terminal />
+</div>
 ```
 
 The plugin spawns a ttyd process when you navigate to the slide and cleans it up on server shutdown.
@@ -108,6 +111,26 @@ ttyd -W -p 9000 bash
 
 ```markdown
 <Terminal />
+```
+
+## Sizing
+
+The terminal fills its container with `height: 100%`. When sharing a slide with other content (headings, text), wrap it in a sized container so it doesn't overflow:
+
+```markdown
+# My Slide
+
+<div class="flex-1 min-h-0">
+  <Terminal />
+</div>
+```
+
+Or add `class: flex flex-col` to the slide frontmatter:
+
+```yaml
+---
+class: flex flex-col
+---
 ```
 
 ## API
