@@ -61,7 +61,7 @@ export interface SpawnRequest {
 }
 
 export interface SpawnedEvent {
-  session: string
   port: number
+  session: string
   state: 'running' | 'error'
 }
