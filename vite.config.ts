@@ -54,6 +54,9 @@ function spawnTtyd(ttydPath: string, port: number, shell: string, cwd: string): 
 }
 
 export default defineConfig({
+  optimizeDeps: {
+    include: ['@xterm/addon-fit', '@xterm/addon-web-links', '@xterm/xterm'],
+  },
   plugins: [
     {
       name: 'slidev-addon-liveshell',
